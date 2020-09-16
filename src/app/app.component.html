@@ -1,7 +1,17 @@
 <h4>Contacts</h4>
-<ag-grid-angular
-    style="width: 500px; height: 150px;"
-    class="ag-theme-alpine"
-    [rowData]="contactData"
-    [columnDefs]="columnDefs">
-</ag-grid-angular>
+<div *ngIf="!editContact">
+  <ag-grid-angular
+      style="width: 800px; height: 150px;"
+      class="ag-theme-balham"
+      [rowData]="contactData"
+      [columnDefs]="columnDefs">
+  </ag-grid-angular>
+</div>
+<div *ngIf="editContact">
+  <form>
+    <input type="text" value="">
+    <input type="text" value="">
+    <input type="text" value="">
+    <button>Save</button>button>
+  </form>
+</div>

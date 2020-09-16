@@ -14,6 +14,7 @@ export class AppComponent {
   title = 'contact';
   contactData;  
   columnDefs;
+  editContact = "";
 
   constructor(private appService:AppService)
   { 
@@ -30,7 +31,7 @@ export class AppComponent {
           cellRenderer: function(params) {
               let keyData = params.data.key;
               let valData = params.data.value;
-              let newHtml = '<button (click)="editContact()">Edit</button> <button (click)="editContact()">Delete</button>';
+              let newHtml = '<button (click)="editContact = 1">Edit</button> <button (click)="deleteContact()">Delete</button>';
               return newHtml;
           }
         }
@@ -47,6 +48,7 @@ export class AppComponent {
 
 function editContact()
 {
+    this.editContact = 1;
     console.log("edit contact")
 }
 
